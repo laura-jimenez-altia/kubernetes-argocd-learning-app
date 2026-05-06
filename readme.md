@@ -4,4 +4,6 @@ This is a Node.js Express application that serves a simple web page. To test it 
 2. Run the container: `docker run -p 3000:3000 kubernetes-argocd-learning-app`
 3. Open browser to `http://localhost:3000`
 
+4. Run Dockercompose if exists: `docker compose up` 
+
 The app includes a health check endpoint at `/health` that returns JSON status.
