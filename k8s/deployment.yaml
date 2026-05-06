@@ -17,6 +17,10 @@ spec:
     spec:
       containers:
         - name: app
-          image: nginx:alpine
+          image: laurajimenezaltia/kubernetes-argocd-learning-app:latest
+          imagePullPolicy: Never
           ports:
-            - containerPort: 80
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "development"
