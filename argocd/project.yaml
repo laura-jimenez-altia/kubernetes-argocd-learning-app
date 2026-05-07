@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+
+metadata: # Define el nombre del proyecto y el espacio de nombres donde se creará
+  name: testing-project
+  namespace: argocd
+
+spec:
+  description: Project for testing environment
+
+  sourceRepos: # Permite cualquier repositorio Git como fuente de aplicaciones
+    - '*'
+
+  destinations: 
+    - namespace: testing # Especifica el espacio de nombres donde se desplegarán las aplicaciones de este proyecto
+      server: https://kubernetes.default.svc # Indica que las aplicaciones se desplegarán en el clúster de Kubernetes actual
+
+  clusterResourceWhitelist: # Permite que las aplicaciones de este proyecto gestionen cualquier recurso de clúster
+    - group: '*'
+      kind: '*'
