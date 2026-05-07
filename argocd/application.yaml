@@ -9,7 +9,7 @@ spec:
   project: testing-project
 
   source: # Indica la ubicación el repositorio Git y la ruta a los manifiestos de Kubernetes
-    repoURL: https://github.com/TU_USUARIO/TU_REPO.git
+    repoURL: https://github.com/laura-jimenez-altia/kubernetes-argocd-learning-app.git
     targetRevision: HEAD
     path: k8s 
 
