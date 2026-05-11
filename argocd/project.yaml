@@ -15,6 +15,12 @@ spec:
     - namespace: testing # Especifica el espacio de nombres donde se desplegarán las aplicaciones de este proyecto
       server: https://kubernetes.default.svc # Indica que las aplicaciones se desplegarán en el clúster de Kubernetes actual
 
+    - namespace: dev # Especifica otro espacio de nombres para despliegues adicionales
+      server: https://kubernetes.default.svc
+    
+    - namespace: prod # Especifica otro espacio de nombres para despliegues adicionales
+      server: https://kubernetes.default.svc
+      
   clusterResourceWhitelist: # Permite que las aplicaciones de este proyecto gestionen cualquier recurso de clúster
     - group: '*'
       kind: '*'
