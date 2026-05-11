@@ -11,7 +11,7 @@ spec:
   source: # Indica la ubicación el repositorio Git y la ruta a los manifiestos de Kubernetes
     repoURL: https://github.com/laura-jimenez-altia/kubernetes-argocd-learning-app.git
     targetRevision: HEAD
-    path: k8s 
+    path: learning-app
 
   destination: # Especifica el clúster de Kubernetes y el espacio de nombres donde se desplegará la aplicación
     server: https://kubernetes.default.svc
