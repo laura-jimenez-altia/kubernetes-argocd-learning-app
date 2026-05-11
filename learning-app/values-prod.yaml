@@ -10,6 +10,7 @@ service:
   port: 3000
 
 ingress:
+  enabled: true
   host: prod.learning-app.local
 
 env: production

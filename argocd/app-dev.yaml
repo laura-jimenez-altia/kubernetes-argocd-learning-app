@@ -25,6 +25,6 @@ spec:
     automated: # Habilita la sincronización automática para que Argo CD aplique los cambios automáticamente
       prune: true # Elimina los recursos que ya no están definidos en el repositorio Git
       selfHeal: true # Permite que Argo CD corrija automáticamente cualquier desviación del estado deseado
-    
+      
     syncOptions: # Opciones adicionales para la sincronización
       - CreateNamespace=true # Crea el espacio de nombres si no existe 

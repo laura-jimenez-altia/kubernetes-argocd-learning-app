@@ -10,6 +10,7 @@ service:
   port: 3000
 
 ingress:
+  enabled: true # Habilita el recurso Ingress para esta aplicación
   host: dev.learning-app.local
 
 env: dev
