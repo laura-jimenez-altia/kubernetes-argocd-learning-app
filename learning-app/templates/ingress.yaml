@@ -8,7 +8,7 @@ spec:
   ingressClassName: nginx
 
   rules:
-    - host: learning-app.local
+    - host: {{ .Values.ingress.host }}
 
       http:
         paths:
