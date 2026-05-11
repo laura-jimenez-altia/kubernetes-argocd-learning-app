@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: learning-app-dev
+  namespace: argocd
+
+spec:
+  project: testing-project
+
+  source: # Indica la ubicación el repositorio Git y la ruta a los manifiestos de Kubernetes
+    repoURL: https://github.com/laura-jimenez-altia/kubernetes-argocd-learning-app.git
+    targetRevision: HEAD
+    path: learning-app
+
+    helm:
+      valueFiles:
+        - values-dev.yaml
+
+  destination: # Especifica el clúster de Kubernetes y el espacio de nombres donde se desplegará la aplicación
+    server: https://kubernetes.default.svc
+    namespace: dev
+
+  syncPolicy: # Configura la política de sincronización para que Argo CD mantenga el estado deseado de la aplicación
+    automated: # Habilita la sincronización automática para que Argo CD aplique los cambios automáticamente
+      prune: true # Elimina los recursos que ya no están definidos en el repositorio Git
+      selfHeal: true # Permite que Argo CD corrija automáticamente cualquier desviación del estado deseado
+    
+    syncOptions: # Opciones adicionales para la sincronización
+      - CreateNamespace=true # Crea el espacio de nombres si no existe 

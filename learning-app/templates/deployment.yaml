@@ -29,4 +29,4 @@ spec:
 
           env:
             - name: NODE_ENV
-              value: development
+              value: {{ .Values.env }}

@@ -1,0 +1,12 @@
+replicaCount: 3
+
+image:
+  repository: kubernetes-argocd-learning-app
+  tag: latest
+  pullPolicy: Never
+
+service:
+  type: NodePort
+  port: 3000
+
+env: production

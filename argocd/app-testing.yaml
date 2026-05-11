@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: learning-app
+  name: learning-app-testing
   namespace: argocd
 
 spec:
@@ -12,6 +12,10 @@ spec:
     repoURL: https://github.com/laura-jimenez-altia/kubernetes-argocd-learning-app.git
     targetRevision: HEAD
     path: learning-app
+
+    helm:
+      valueFiles:
+        - values-testing.yaml
 
   destination: # Especifica el clúster de Kubernetes y el espacio de nombres donde se desplegará la aplicación
     server: https://kubernetes.default.svc
