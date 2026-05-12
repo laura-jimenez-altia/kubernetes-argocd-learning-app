@@ -29,4 +29,7 @@ spec:
 
           env:
             - name: NODE_ENV
-              value: {{ .Values.env }}
+              valueFrom:
+                configMapKeyRef:
+                  name: learning-app-config
+                  key: NODE_ENV
